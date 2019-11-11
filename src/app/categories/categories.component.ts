@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Category } from '../shared/models/Category.model';
 import {CategoryService} from '../shared/services/category.service';
 
@@ -7,7 +7,7 @@ import {CategoryService} from '../shared/services/category.service';
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
-export class CategoriesComponent implements OnInit {
+export class CategoriesComponent implements OnInit, OnDestroy {
 
   categories: Category[];
   
@@ -22,6 +22,10 @@ export class CategoriesComponent implements OnInit {
     this.categoryService.categoryadded.subscribe(categories => {
       this.categories = categories;
     })
+  }
+
+  ngOnDestroy() {
+    this.categoryService.categoryadded.unsubscribe();
   }
 
 }
