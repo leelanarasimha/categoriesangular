@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Category } from '../shared/models/Category.model';
 import {CategoryService} from '../shared/services/category.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-categories',
@@ -10,6 +11,7 @@ import {CategoryService} from '../shared/services/category.service';
 export class CategoriesComponent implements OnInit, OnDestroy {
 
   categories: Category[];
+  categoriesSubscription: Subscription
   
   constructor(private categoryService: CategoryService) { 
  
@@ -19,13 +21,13 @@ export class CategoriesComponent implements OnInit, OnDestroy {
     
     this.categories = this.categoryService.getCategories();
 
-    this.categoryService.categoryadded.subscribe(categories => {
+    this.categoriesSubscription = this.categoryService.categoryadded.subscribe(categories => {
       this.categories = categories;
     })
   }
 
   ngOnDestroy() {
-    this.categoryService.categoryadded.unsubscribe();
+    this.categoriesSubscription.unsubscribe();
   }
 
 }

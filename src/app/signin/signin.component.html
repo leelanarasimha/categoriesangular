@@ -1,6 +1,7 @@
 <div class="container">
     <h1>SignIn</h1>
 <form #signinform="ngForm" (ngSubmit)="onSubmit()">
+    <div ngModelGroup="userdata">
     <div class="form-group">
         <label>UserName</label>
         <input type="text" class="form-control" [ngModel]="username" name="username" required />
@@ -10,6 +11,7 @@
             <label>Email</label>
             <input type="text" class="form-control" ngModel name="email" required/>
         </div>
+    </div>
 
         <div>
             <button type="submit" class="btn btn-primary" [disabled]="!signinform.valid">Register</button>

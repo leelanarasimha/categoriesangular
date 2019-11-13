@@ -4,6 +4,7 @@
     <tr *ngFor="let category of categories">
         <td>{{category.name}}</td>
         <td>{{category.id}}</td>
+        <td><a [routerLink]="['/categories', category.id]">View Details</a></td>
     </tr>
 
 </table>
