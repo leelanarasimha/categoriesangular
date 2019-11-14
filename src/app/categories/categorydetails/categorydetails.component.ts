@@ -18,6 +18,14 @@ export class CategorydetailsComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.category = this.categoryService.getCategoryById(params['id']);
+    });
+
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+    });
+
+    this.route.fragment.subscribe(params => {
+      console.log(params);
     })
     
     

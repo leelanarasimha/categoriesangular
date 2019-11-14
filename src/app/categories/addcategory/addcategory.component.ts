@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addcategory',
@@ -10,7 +11,7 @@ export class AddcategoryComponent implements OnInit {
   name: string;
   id: string;
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,6 +19,9 @@ export class AddcategoryComponent implements OnInit {
   onAddCategory(event: Event) {
     event.preventDefault();
     this.categoryService.addCategory(this.id, this.name);
+    //redirect to /categories
+    this.router.navigate(['/categories']);
+
   }
 
 }

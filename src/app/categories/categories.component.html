@@ -1,13 +1,21 @@
 
-<table>
+
+<div>
+    <a [routerLink]="['/categories', 'add']" class="btn btn-primary my-4">Add Category</a>
+</div>
+<table class="table">
 
     <tr *ngFor="let category of categories">
         <td>{{category.name}}</td>
         <td>{{category.id}}</td>
-        <td><a [routerLink]="['/categories', category.id]">View Details</a></td>
+        <td><a [routerLink]="['/categories', category.id]"
+             [queryParams]="{ order: 'popular', id: '12'}"
+             fragment="loading">View Details</a></td>
     </tr>
 
 </table>
 
 
-<app-addcategory></app-addcategory>
+<div>
+    <router-outlet></router-outlet>
+</div>

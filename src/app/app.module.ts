@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {Routes, RouterModule} from '@angular/router';
+import {AppRoutingModule} from 'app';
 
 import { AppComponent } from './app.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -12,14 +12,7 @@ import { ReactivesigninComponent } from './reactivesignin/reactivesignin.compone
 import { CategorydetailsComponent } from './categories/categorydetails/categorydetails.component';
 
 
-const appRoutes: Routes = [
-  {path: '', component: CategoriesComponent},
-  {path: 'categories', component: CategoriesComponent},
-  {path: 'categories/:id', component: CategorydetailsComponent},
-  
-  {path: 'reactive', component: ReactivesigninComponent},
-  {path: 'signin', component: SigninComponent}
-]
+
 
 @NgModule({
   declarations: [
@@ -34,7 +27,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
+    
   ],
   providers: [CategoryService],
   bootstrap: [AppComponent]
