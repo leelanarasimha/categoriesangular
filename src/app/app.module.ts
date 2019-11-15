@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AppRoutingModule} from 'app';
+import {AppRoutingModule} from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -10,6 +11,7 @@ import { CategoryService } from './shared/services/category.service';
 import { SigninComponent } from './signin/signin.component';
 import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
 import { CategorydetailsComponent } from './categories/categorydetails/categorydetails.component';
+import { CustomobservableComponent } from './customobservable/customobservable.component';
 
 
 
@@ -21,13 +23,15 @@ import { CategorydetailsComponent } from './categories/categorydetails/categoryd
     AddcategoryComponent,
     SigninComponent,
     ReactivesigninComponent,
-    CategorydetailsComponent
+    CategorydetailsComponent,
+    CustomobservableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
     
   ],
   providers: [CategoryService],

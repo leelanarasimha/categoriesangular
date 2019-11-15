@@ -5,12 +5,14 @@ import { AddcategoryComponent } from './categories/addcategory/addcategory.compo
 import { SigninComponent } from './signin/signin.component';
 import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
 import { CategorydetailsComponent } from './categories/categorydetails/categorydetails.component';
+import { CustomobservableComponent } from './customobservable/customobservable.component';
 
 
 const appRoutes: Routes = [
     {path: '', component: CategoriesComponent},
     {path: 'reactive', component: ReactivesigninComponent},
     {path: 'signin', component: SigninComponent},
+    {path: 'observable', component: CustomobservableComponent},
   
   
     {path: 'categories', component: CategoriesComponent, children: [
@@ -27,6 +29,6 @@ const appRoutes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class RoutingModule {}
+export class AppRoutingModule {}
 
 
