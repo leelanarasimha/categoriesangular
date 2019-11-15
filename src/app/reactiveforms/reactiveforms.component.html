@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form [formGroup]="transactionControlForm" (submit)="onSubmit()">
+                <div class="form-group">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" formControlName="name"/>
+                    <div *ngIf="transactionControlForm.get('name').touched && transactionControlForm.get('name').invalid">
+                        <div *ngIf="transactionControlForm.get('name').errors['required']">Name is required</div>
+                        <div *ngIf="transactionControlForm.get('name').errors['minlength']">Name shuld be more than 4 characers</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" formControlName="email"/>
+                    </div>
+
+                    <div>
+                        <input type="submit" 
+                        class="btn btn-primary"
+                        [disabled]="transactionControlForm.invalid"
+                         value="Register"/>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>

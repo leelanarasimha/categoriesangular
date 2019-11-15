@@ -12,6 +12,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ReactivesigninComponent } from './reactivesignin/reactivesignin.component';
 import { CategorydetailsComponent } from './categories/categorydetails/categorydetails.component';
 import { CustomobservableComponent } from './customobservable/customobservable.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 
 
@@ -24,7 +25,8 @@ import { CustomobservableComponent } from './customobservable/customobservable.c
     SigninComponent,
     ReactivesigninComponent,
     CategorydetailsComponent,
-    CustomobservableComponent
+    CustomobservableComponent,
+    ReactiveformsComponent
   ],
   imports: [
     BrowserModule,

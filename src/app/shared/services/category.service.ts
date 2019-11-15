@@ -18,10 +18,11 @@ export class CategoryService {
       @Output() categoryadded = new EventEmitter<Category[]>();
 
       getCategories() {
-          this.http.get(`https://angulardemo-25a16.firebaseio.com/categories.json`)
-          .subscribe(categories => {
-              console.log(categories);
-          })
+          return [...this.categories];
+        //   this.http.get(`https://angulardemo-25a16.firebaseio.com/categories.json`)
+        //   .subscribe(categories => {
+        //       console.log(categories);
+        //   })
       }
 
       addCategory(id: string, name: string) {
